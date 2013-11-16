@@ -12,6 +12,8 @@ It is also a node module that you can require() in your tests
 
 Some CSVs here were included from [csvkit](https://github.com/onyxfish/csvkit/tree/master/examples)
 
+https://github.com/maxogden/binary-csv uses csv-spectrum and passes all tests
+
 ### programmatic usage
 
 ```js
