@@ -7,8 +7,9 @@ module.exports = function(cb) {
       var items = []
       for (var i = 0; i < csvs.length; i++) {
         var item = {
-          csv: fs.readFileSync(csvs[i]),
-          json: fs.readFileSync(json[i])
+          csv: fs.readFileSync(csvs[i].path),
+          json: fs.readFileSync(json[i].path),
+          name: path.basename(csvs[i].name, path.extname(csvs[i].name))
         }
         items.push(item)
       }
@@ -18,8 +19,13 @@ module.exports = function(cb) {
 }
 
 function absoluteFilePaths(folder, cb) {
-  fs.readdir(folder, function(err, files) {
+  fs.readdir(path.join(__dirname, folder), function(err, files) {
     if (err) return cb(err)
-    cb(null, files.map(function(f) { return path.resolve(folder, f) }))
+    cb(null, files.map(function(f) {
+      return {
+        name: f,
+        path: path.join(__dirname, folder, f)
+      }
+    }))
   })
 }
