@@ -1,6 +1,6 @@
 {
   "name": "csv-spectrum",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "csv test data for writing robust csv parsers",
   "main": "index.js",
   "repository": {
