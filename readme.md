@@ -17,7 +17,7 @@ https://github.com/maxogden/binary-csv uses csv-spectrum and passes all tests
 ### programmatic usage
 
 ```js
-vsr spectrum = require('csv-spectrum')
+var spectrum = require('csv-spectrum')
 spectrum(function(err, data) {
   // data is an array of objects has all the csv and json versions of the tests
 })
@@ -39,7 +39,7 @@ spectrum(function(err, data) {
 example usage in a test might be:
 
 ```
-vsr spectrum = require('csv-spectrum')
+var spectrum = require('csv-spectrum')
 spectrum(function(err, data) {
   console.log('testing ' + data[0].name)
   t.equal(csv2json(data[0].csv), JSON.parse(data[0].json))
